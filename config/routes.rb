@@ -14,9 +14,16 @@ Rails.application.routes.draw do
   get 'contact', to: 'pages#contact' #localhost:3000/contact
   
 
+  #Creating a custom route
 
+  resources :blogs do
+    member do
+      get :toggle_status
+    end
+  end
 
-  resources :blogs
+  
+
   
   root to: 'pages#home' #Esta página será la página principal del sitio - localthost:3000/home
 end
