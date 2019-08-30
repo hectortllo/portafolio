@@ -1,4 +1,5 @@
 class Portafolio < ApplicationRecord
+    include Placeholder
     validates_presence_of :title, :body, :main_image, :thumb_image
 
     #Función para hacer una consulta where
@@ -17,8 +18,8 @@ class Portafolio < ApplicationRecord
         #if self.main_image == nil
         #    self.main_image = "http://placehold.it/600x200"
         #end
-        self.main_image ||= "http://placehold.it/600x200"
-        self.thumb_image ||= "http://placehold.it/350x200"
+        self.main_image ||= Placeholder.image_generator(height: '600', width: '400')
+        self.thumb_image ||= Placeholder.image_generator(height: '350', width: '200')
     end
 end
 
