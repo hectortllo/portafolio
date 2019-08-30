@@ -1,1 +1,12 @@
 Para poner rutas amigables, ver el video 66. En este link: https://github.com/norman/friendly_id está la gema 
+1. Después de crear una función en un controller. - ejemplo
+	1.2. Debo crear un nuevo archivo en app/views/pages con el mismo nombre 
+	de la función nueva. ejemplo.html.erb
+
+2. Scaffold sirve para crear controladores automáticamente.
+3. Crear controladores: rails g controller nombre main user blog 
+	3.1 (main, user, blog solo son páginas)
+4. Para crear un controlador manualmente, la estructura debe ser la siguiente:
+	nombre_controller.rb
+5. Si el error dice que falta un template, se debe crear una carpeta en la carpeta 'views'.
+6. En MVC, el modelo (M), cuando hablamos del modelo, hablamos de los datos.
