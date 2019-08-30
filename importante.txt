@@ -1,1 +1,1 @@
-Para poner rutas amigables, ver el video 66
+Para poner rutas amigables, ver el video 66. En este link: https://github.com/norman/friendly_id está la gema 
