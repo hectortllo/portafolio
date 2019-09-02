@@ -3,4 +3,9 @@ class Blog < ApplicationRecord
   enum status: { draft: 0, published: 1 }
   extend FriendlyId
   friendly_id :title, use: :slugged
+
+  #Validamos que un blog no pueda crearse sino lleva un título y un body
+  validates_presence_of :title, :body
+
+  belongs_to :topic
 end

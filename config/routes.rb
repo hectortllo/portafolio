@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   #Al hacer esto también se cambió la ruta en el archivo index.htm.erb en la sección del título
   #portfolio.item.title
   resources :portafolios, except: [:show]
+  get 'angular-items', to: 'portafolios#angular'
   get 'portafolio/:id', to: 'portafolios#show', as: 'portfolio_show'
 
 #  get 'pages/home'
