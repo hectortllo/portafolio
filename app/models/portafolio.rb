@@ -1,5 +1,10 @@
 class Portafolio < ApplicationRecord
     has_many :technologies
+
+    #Relacionar varios modelos desde uno solo
+    accepts_nested_attributes_for :technologies, 
+            reject_if: lambda { |attrs| attrs['name'].blank? } #Esta línea es para validar que el nombre no quede vacío
+
     include Placeholder
     validates_presence_of :title, :body, :main_image, :thumb_image
 
