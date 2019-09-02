@@ -9,10 +9,14 @@ class PortafoliosController < ApplicationController
 
   def new
     @portfolio_item = Portafolio.new
+    #build: básicamente, se van a instanciar 3 versiones de @portfolio_items
+    3.times { @portfolio_item.technologies.build }
   end
 
   def create
-    @portfolio_item = Portafolio.new(params.require(:portafolio).permit(:title, :subtitle, :body))
+    @portfolio_item = Portafolio.new(params.require(:portafolio).permit(:title, :subtitle, :body, 
+      technologies_attributes: [:name]))
+
     respond_to do |format|
       if @portfolio_item.save
         format.html { redirect_to portafolios_path, notice: 'Blog was successfully created.' }

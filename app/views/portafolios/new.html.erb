@@ -16,6 +16,16 @@
     <%= f.text_area :body %>
   </div>
 
+<%# Se creó esta lista para poder escoger tres tecnologías usadas para crear un portafolio %>
+  <ul>
+    <%= f.fields_for :technologies do |technology_form|  %>
+      <li>
+        <%= technology_form.label :name  %>
+        <%= technology_form.text_field :name  %>
+      </li>
+    <% end %>
+  </ul>
+
   <div class="actions">
     <%= f.submit %>
   </div>
