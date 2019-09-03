@@ -7,5 +7,5 @@ class Blog < ApplicationRecord
   #Validamos que un blog no pueda crearse sino lleva un título y un body
   validates_presence_of :title, :body
 
-  belongs_to :topic
+  belongs_to :topic, optional: true
 end
