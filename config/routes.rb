@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+  #Esta línea sirve para cambiar las rutas:
+    #Se cambió localhost:3000/users/sign_in por localhost:3000/users/login
+    #Se cambió localhost:3000/users/sign_out por localhost:3000/users/logout
+    #Se cambió localhost:3000/users/sign_up por localhost:3000/users/register
+  devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register'}
+
+
   #Las siguientes dos líneas de código se hacen para cambiar la ruta, al entrar a un solo
   #portafolio, la ruta ya no dirá 'portafolios/3' sino, 'portafolio/3'. Se cambia de plural
   #a singular. SE CREA UNA RUTA PROPIA.
