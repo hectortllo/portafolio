@@ -87,3 +87,5 @@ SQL EXAMPLES:
 	VER EL VIDEO 86.
 
 22. Al copiar una gema dentro del archivo Gemfile, hay que ejecutar el comando "bundle install"
+23. Para encontrar la ruta de alguna página, escribir: rake routes | grep logout
+	23.1 logout es el nombre de la página a la que le quiero saber su ruta
