@@ -1,0 +1,93 @@
+Para poner rutas amigables, ver el video 66. En este link: https://github.com/norman/friendly_id está la gema 
+1. Después de crear una función en un controller. - ejemplo
+	1.2. Debo crear un nuevo archivo en app/views/pages con el mismo nombre 
+	de la función nueva. ejemplo.html.erb
+
+2. Scaffold sirve para crear controladores automáticamente.
+3. Crear controladores: rails g controller nombre main user blog 
+	3.1 (main, user, blog solo son páginas)
+4. Para crear un controlador manualmente, la estructura debe ser la siguiente:
+	nombre_controller.rb
+5. Si el error dice que falta un template, se debe crear una carpeta en la carpeta 'views'.
+6. En MVC, el modelo (M), cuando hablamos del modelo, hablamos de los datos.
+
+7. Después de crear una función en un controller. - ejemplo
+	1.2. Debo crear un nuevo archivo en app/views/pages con el mismo nombre 
+	de la función nueva. ejemplo.html.erb
+
+8. Scaffold sirve para crear controladores automáticamente.
+9. Crear controladores: rails g controller nombre main user blog 
+	3.1 (main, user, blog solo son páginas)
+10. Para crear un controlador manualmente, la estructura debe ser la siguiente:
+	nombre_controller.rb
+11. Si el error dice que falta un template, se debe crear una carpeta en la carpeta 'views'.
+12. En MVC, el modelo (M), cuando hablamos del modelo, hablamos de los datos.
+13. Para crear un modelo se usa: rails g model Topic title:string.
+	Topic = es el nombre
+	title:string = es el campo y el tipo de dato
+	13.1 Después hacer un db:migrate
+
+14. Para crear una relación entre una tabla y otra:
+	14.1 Un blog puede tener muchos topics:
+		14.1.1 rails g migration add_topic_reference_to_blogs topic:references
+
+15. Para conectar un blog con un id de topic:
+	15.1 Blog.create!(title: "Some cool ruby stuff", body: "asdfasdf", topic_id: Topic.first.id)
+
+16. Creando datos de prueba desde el archivo seeds.rb:
+	16.1 Después de editar la información que quiero crear, se debe escribir en la consola: rails db:setup
+
+17. Consultas: Las consultas las puedo poner en un controller
+	17.1 Portafolio.where(subtitle: "Ruby on Rails")
+	17.2 Portafolio.where(subtitle: "Ruby on Rails").count
+
+18. Después de agregar una función en un controlador:
+	18.1 Se crea la vista de esa función
+	18.2 Se añade la ruta al archivo routes.rb
+
+19. Agregar campos a una tabla:
+	19.1 rails g migration add_badge_to_skills badge:text
+		19.1 Agregando un campo badge a la tabla skills
+		19.2 Después se debe hacer un rails db:migrate
+
+20. Agregar tabla y relacionarla con otra existente:
+	20.1 rails g model Technology name:string portafolio:references
+		20.1.1 Se creó una tabla llamada Technology y se relacionó con la tabla Portafolio
+		20.1.2 Después se debe poner has_many :technologies en portafolio.rb
+	20.2 rails db:migrate
+	20.3 Para crear 'technologies' relacionadas a un solo 'portafolio', se usa el siguiente código:
+		Portafolio.create!(title: "Web app", subtitle: "ASDF", body: "ASDFASDF", technologies_attributes: [{name: 'Ruby'}, {name: 'Rails'}, {name: "Angular"}, {name: "Ionic"}])
+
+21. Haciendo el paso 14 pero desde el front:
+	21.1 Se editaron los métodos new y create en "portafolios_controller.rb"
+	21.2 Se editaron las vistas de los métodos new y show
+
+SQL EXAMPLES:
+	
+	1. Book.where(title: "The Force").first.author -> Traer el autor que ha escrito el libro "The Force"
+		Este ejemplo, nos devuelve una colección, para eso se le pone el atributo "first", para tomar solo el primer valor
+		de la colección
+		1.1 Book.where(title: "The Force").class
+	2. Book.find_by_title("The Force").author -> Hace exactamente lo mismo que el ejemplo anterior, pero es más eficiente
+		Este tipo de sentencias son las que hay que usar
+		2.1 Book.find_by_title("The Force").class
+	3. Author.where(country: "Guatemala") -> Devuelve todos los autores que son de Guatemala
+	4. Book.count -> Devuelve cuántos libros existen en la tabla "Book"
+	5. vader = Author.find_by_name("Vader")
+		5.2 vader.books.sum(:sales)
+		sales es otro valor de la tabla. Esta consulta suma todas las 'sales' que haya hecho el autor, vader.
+	6. Book.average(:sales).to_f -> Devuelve un promedio de todas las ventas
+	7. Book.maximum(:sales) -> Devuelve qué libro tuvo el mayor número de ventas
+		Book.order('sales DESC') -> Devuelve los libros ordenados de mayor ventas a menor ventas
+		Book.order('sales DESC').first -> Devuelve el libro con más ventas 
+		Book.order('sales DESC').first.author.name -> Devuelve el nombre del autor del libro que haya tenido más ventas
+	8. Book.pluck(:title) -> Devuelve solo los nombres de los libros
+
+	PARA UNIR TABLAS QUE NO ESTÁN RELACIONADAS ENTRE SÍ, ES DECIR, USAR UNA TABLA COMO PUENTE PARA ACCEDER A OTRA, 
+	VER EL VIDEO 86.
+
+22. Al copiar una gema dentro del archivo Gemfile, hay que ejecutar el comando "bundle install"
+23. Para encontrar la ruta de alguna página, escribir: rake routes | grep logout
+	23.1 logout es el nombre de la página a la que le quiero saber su ruta
+
+24. Para poder mandar más parámetros al momento de agregar o editar algo. Ver el video 92 y 93
