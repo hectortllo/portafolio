@@ -91,3 +91,5 @@ SQL EXAMPLES:
 	23.1 logout es el nombre de la página a la que le quiero saber su ruta
 
 24. Para poder mandar más parámetros al momento de agregar o editar algo. Ver el video 92 y 93
+25. Para permitir pasar cualquier parámetro, se debe agregar la siguiente línea:
+		config.action_controller.permit_all_parameters=true en el archivo application.rb
