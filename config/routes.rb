@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   #Las siguientes dos líneas de código se hacen para cambiar la ruta, al entrar a un solo
   #portafolio, la ruta ya no dirá 'portafolios/3' sino, 'portafolio/3'. Se cambia de plural
   #a singular. SE CREA UNA RUTA PROPIA.
