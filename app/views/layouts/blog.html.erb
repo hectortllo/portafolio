@@ -23,9 +23,7 @@
     <%# Importando el archivo _nav.html.erb%>
     <%= render "shared/nav", location: 'bottom' %>
 
-    <%# Si alguien tiene una sesión iniciada, se ejectuará esto%>
-    <% if session[:source] %>
-      <p>Thanks for visiting me from <%= session[:source] %></p>
-    <%end%>
+    <%# Llamando el método source_helper que está en el archivo application_helper.rb%>
+    <%= source_helper("blog") %>
   </body>
 </html>
