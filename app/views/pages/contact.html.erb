@@ -1,2 +1,12 @@
 <h1>Pages#contact</h1>
-<p>Find me in app/views/pages/contact.html.erb</p>
+<%# Colocar un número de teléfono %>
+<p><%= number_to_phone "5555555555" %></p>
+
+<%# Colocar cantidad de dinero en dólares %>
+<p><%= number_to_currency "150" %></p>
+
+<%# Colocar porcentaje %>
+<!-- <p><%= number_to_percentage "80.4" %></p> -->
+
+<%# Colocar una cantidad, en decenas, centenas, separados por comas %>
+<p><%= number_with_delimiter "1235637473" %></p>
