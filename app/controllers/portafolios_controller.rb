@@ -36,7 +36,7 @@ class PortafoliosController < ApplicationController
   def update
     @portfolio_item = Portafolio.find(params[:id])
     respond_to do |format|
-      if @portfolio_item.update(partafolio_params)
+      if @portfolio_item.update(portafolio_params)
         format.html { redirect_to portafolios_path, notice: 'The record successfully updated' }
       else
         format.html { render :edit }

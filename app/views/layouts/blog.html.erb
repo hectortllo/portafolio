@@ -24,7 +24,8 @@
 
     <%# Permite conectar con cualquier otro archivo html%>
     <%= yield %>
-    <%= render "shared/nav" %>
+    <%# Importando el archivo _nav.html.erb%>
+    <%= render "shared/nav", location: 'bottom' %>
 
     <%# Si alguien tiene una sesión iniciada, se ejectuará esto%>
     <% if session[:source] %>
