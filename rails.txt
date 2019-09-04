@@ -131,3 +131,15 @@ SQL EXAMPLES:
 			me paso a la rama master, y hago: git merge rama_secundaria
 
 26. Para hacer debuggin en rails, se pueden usar las gemas 'byebug' y 'pry byebug'
+	26.1 Para usar la gema byebug solo basta colocar byebug en algún punto del programa para poner un breakpoint
+
+27. Ejemplo para capturar errores
+	def divide num1, num2
+		begin
+			num1 / num2
+		rescue ZeroDevisionError => editar
+			puts "Error: #{e}"
+		end
+	end
+
+	divide 5,0
