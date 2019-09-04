@@ -1,13 +1,27 @@
+Para crear una nueva aplicación:
+	rails new nombre
+
 Para poner rutas amigables, ver el video 66. En este link: https://github.com/norman/friendly_id está la gema 
 1. Después de crear una función en un controller. - ejemplo
 	1.2. Debo crear un nuevo archivo en app/views/pages con el mismo nombre 
 	de la función nueva. ejemplo.html.erb
 
 2. Scaffold sirve para crear controladores automáticamente.
+	2.1 rails g scaffold Blog title:string body:text
+		2.1.1 Blog es el nombre del controllador
+		2.1.2 title y body son los atributos que tendrá
+		2.1.3 string y text son los tipos de datos
+	2.2 Después ejecutar rails db:migrate
+
 3. Crear controladores: rails g controller nombre main user blog 
 	3.1 (main, user, blog solo son páginas)
 4. Para crear un controlador manualmente, la estructura debe ser la siguiente:
 	nombre_controller.rb
+	4.1 Después se debe crear una carpeta con el nombre del controlador en views
+	4.2 Ver el paso 7
+	4.3 Darle una ruta en el archivo routes.rb
+		4.3 get 'nombreCarpeta/nombreArchivo'
+
 5. Si el error dice que falta un template, se debe crear una carpeta en la carpeta 'views'.
 6. En MVC, el modelo (M), cuando hablamos del modelo, hablamos de los datos.
 
@@ -15,52 +29,45 @@ Para poner rutas amigables, ver el video 66. En este link: https://github.com/no
 	1.2. Debo crear un nuevo archivo en app/views/pages con el mismo nombre 
 	de la función nueva. ejemplo.html.erb
 
-8. Scaffold sirve para crear controladores automáticamente.
-9. Crear controladores: rails g controller nombre main user blog 
-	3.1 (main, user, blog solo son páginas)
-10. Para crear un controlador manualmente, la estructura debe ser la siguiente:
-	nombre_controller.rb
-11. Si el error dice que falta un template, se debe crear una carpeta en la carpeta 'views'.
-12. En MVC, el modelo (M), cuando hablamos del modelo, hablamos de los datos.
-13. Para crear un modelo se usa: rails g model Topic title:string.
+8. Para crear un modelo se usa: rails g model Topic title:string.
 	Topic = es el nombre
 	title:string = es el campo y el tipo de dato
-	13.1 Después hacer un db:migrate
+	8.1 Después hacer un db:migrate
 
-14. Para crear una relación entre una tabla y otra:
-	14.1 Un blog puede tener muchos topics:
-		14.1.1 rails g migration add_topic_reference_to_blogs topic:references
+9. Para crear una relación entre una tabla y otra:
+	9.1 Un blog puede tener muchos topics:
+		9.1.1 rails g migration add_topic_reference_to_blogs topic:references
 
-15. Para conectar un blog con un id de topic:
-	15.1 Blog.create!(title: "Some cool ruby stuff", body: "asdfasdf", topic_id: Topic.first.id)
+10. Para conectar un blog con un id de topic:
+	10.1 Blog.create!(title: "Some cool ruby stuff", body: "asdfasdf", topic_id: Topic.first.id)
 
-16. Creando datos de prueba desde el archivo seeds.rb:
-	16.1 Después de editar la información que quiero crear, se debe escribir en la consola: rails db:setup
+11. Creando datos de prueba desde el archivo seeds.rb:
+	11.1 Después de editar la información que quiero crear, se debe escribir en la consola: rails db:setup
 
-17. Consultas: Las consultas las puedo poner en un controller
-	17.1 Portafolio.where(subtitle: "Ruby on Rails")
-	17.2 Portafolio.where(subtitle: "Ruby on Rails").count
+12. Consultas: Las consultas las puedo poner en un controller
+	12.1 Portafolio.where(subtitle: "Ruby on Rails")
+	12.2 Portafolio.where(subtitle: "Ruby on Rails").count
 
-18. Después de agregar una función en un controlador:
-	18.1 Se crea la vista de esa función
-	18.2 Se añade la ruta al archivo routes.rb
+13. Después de agregar una función en un controlador:
+	13.1 Se crea la vista de esa función
+	13.2 Se añade la ruta al archivo routes.rb
 
-19. Agregar campos a una tabla:
-	19.1 rails g migration add_badge_to_skills badge:text
-		19.1 Agregando un campo badge a la tabla skills
-		19.2 Después se debe hacer un rails db:migrate
+14. Agregar campos a una tabla:
+	14.1 rails g migration add_badge_to_skills badge:text
+		14.1 Agregando un campo badge a la tabla skills
+		14.2 Después se debe hacer un rails db:migrate
 
-20. Agregar tabla y relacionarla con otra existente:
-	20.1 rails g model Technology name:string portafolio:references
+15. Agregar tabla y relacionarla con otra existente:
+	15.1 rails g model Technology name:string portafolio:references
 		20.1.1 Se creó una tabla llamada Technology y se relacionó con la tabla Portafolio
 		20.1.2 Después se debe poner has_many :technologies en portafolio.rb
-	20.2 rails db:migrate
-	20.3 Para crear 'technologies' relacionadas a un solo 'portafolio', se usa el siguiente código:
+	15.2 rails db:migrate
+	15.3 Para crear 'technologies' relacionadas a un solo 'portafolio', se usa el siguiente código:
 		Portafolio.create!(title: "Web app", subtitle: "ASDF", body: "ASDFASDF", technologies_attributes: [{name: 'Ruby'}, {name: 'Rails'}, {name: "Angular"}, {name: "Ionic"}])
 
-21. Haciendo el paso 14 pero desde el front:
-	21.1 Se editaron los métodos new y create en "portafolios_controller.rb"
-	21.2 Se editaron las vistas de los métodos new y show
+16. Haciendo el paso 14 pero desde el front:
+	16.1 Se editaron los métodos new y create en "portafolios_controller.rb"
+	16.2 Se editaron las vistas de los métodos new y show
 
 SQL EXAMPLES:
 	
@@ -86,19 +93,38 @@ SQL EXAMPLES:
 	PARA UNIR TABLAS QUE NO ESTÁN RELACIONADAS ENTRE SÍ, ES DECIR, USAR UNA TABLA COMO PUENTE PARA ACCEDER A OTRA, 
 	VER EL VIDEO 86.
 
-22. Al copiar una gema dentro del archivo Gemfile, hay que ejecutar el comando "bundle install"
-23. Para encontrar la ruta de alguna página, escribir: rake routes | grep logout
-	23.1 logout es el nombre de la página a la que le quiero saber su ruta
+17. Al copiar una gema dentro del archivo Gemfile, hay que ejecutar el comando "bundle install"
+18. Para encontrar la ruta de alguna página, escribir: rake routes | grep logout
+	18.1 logout es el nombre de la página a la que le quiero saber su ruta
 
-24. Para poder mandar más parámetros al momento de agregar o editar algo. Ver el video 92 y 93
-25. Para permitir pasar cualquier parámetro, se debe agregar la siguiente línea:
+19. Para poder mandar más parámetros al momento de agregar o editar algo. Ver el video 92 y 93
+20. Para permitir pasar cualquier parámetro, se debe agregar la siguiente línea:
 		config.action_controller.permit_all_parameters=true en el archivo application.rb
 
-26. Para asociar una vista a un controlador y modelo
-	26.1 Crear el archivo layout de cada view en views -> layout
-	26.2 Dentro del controllador hay que poner: layout "blog". Dentro de las comillas va el nombre de la hoja de estilos.
-		26.2.1 El nombre de la hoja de estilos están en app -> assets -> stylesheets
+21. Para asociar una vista a un controlador y modelo
+	21.1 Crear el archivo layout de cada view en views -> layout
+	21.2 Dentro del controllador hay que poner: layout "blog". Dentro de las comillas va el nombre de la hoja de estilos.
+		21.2.1 El nombre de la hoja de estilos están en app -> assets -> stylesheets
 
-27. Cuando usar helpers y cuando usar partials:
-	27.1 Si el código tiene en su mayor parte código de ruby, se crea un helper. (Extensión: .rb)
-	27.2 Si el código tiene en su mayoría código HTML, se usa un partial. (Extension: .html.erb)
+22. Cuando usar helpers y cuando usar partials:
+	22.1 Si el código tiene en su mayor parte código de ruby, se crea un helper. (Extensión: .rb)
+	22.2 Si el código tiene en su mayoría código HTML, se usa un partial. (Extension: .html.erb)
+
+23. Embed ruby code:
+	<% @books %> 
+		No se muestra en pantalla
+		Esta se utiliza para hacer un ciclo
+	<%= @books %> -> Sí se muestra en pantalla
+
+24. Cache en ruby:
+	<% cache do %>
+		Codigo
+	<% end %>
+
+25. GIT:
+	25.1 Subir cambios a una rama
+		25.1.1 git add .
+		25.1.2 git commit -m ""
+	25.2  Hacer merge 
+		25.2.1 Después de haber subido los cambios de la rama donde estuve trabajando (rama_secundaria), 
+			me paso a la rama master, y hago: git merge rama_secundaria
