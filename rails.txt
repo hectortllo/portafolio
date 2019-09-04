@@ -93,3 +93,8 @@ SQL EXAMPLES:
 24. Para poder mandar más parámetros al momento de agregar o editar algo. Ver el video 92 y 93
 25. Para permitir pasar cualquier parámetro, se debe agregar la siguiente línea:
 		config.action_controller.permit_all_parameters=true en el archivo application.rb
+
+26. Para asociar una vista a un controlador y modelo
+	26.1 Crear el archivo layout de cada view en views -> layout
+	26.2 Dentro del controllador hay que poner: layout "blog". Dentro de las comillas va el nombre de la hoja de estilos.
+		26.2.1 El nombre de la hoja de estilos están en app -> assets -> stylesheets
