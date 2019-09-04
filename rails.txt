@@ -98,3 +98,7 @@ SQL EXAMPLES:
 	26.1 Crear el archivo layout de cada view en views -> layout
 	26.2 Dentro del controllador hay que poner: layout "blog". Dentro de las comillas va el nombre de la hoja de estilos.
 		26.2.1 El nombre de la hoja de estilos están en app -> assets -> stylesheets
+
+27. Cuando usar helpers y cuando usar partials:
+	27.1 Si el código tiene en su mayor parte código de ruby, se crea un helper. (Extensión: .rb)
+	27.2 Si el código tiene en su mayoría código HTML, se usa un partial. (Extension: .html.erb)
