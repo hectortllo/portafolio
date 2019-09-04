@@ -118,13 +118,16 @@ SQL EXAMPLES:
 
 24. Cache en ruby:
 	<% cache do %>
-		Codigo
+		Codigob
 	<% end %>
 
 25. GIT:
-	25.1 Subir cambios a una rama
+	25.1 Subir cambios a una rama_secundaria para luego hacer merge con la master
 		25.1.1 git add .
 		25.1.2 git commit -m ""
+		25.1.3 git push origin rama_secundaria
 	25.2  Hacer merge 
 		25.2.1 Después de haber subido los cambios de la rama donde estuve trabajando (rama_secundaria), 
 			me paso a la rama master, y hago: git merge rama_secundaria
+
+26. Para hacer debuggin en rails, se pueden usar las gemas 'byebug' y 'pry byebug'

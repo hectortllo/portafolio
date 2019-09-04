@@ -5,7 +5,9 @@ class BlogsController < ApplicationController
   # GET /blogs
   # GET /blogs.json
   def index
-    @blogs = Blog.all
+    @blogs = Blog.special_blogs
+    #Es una gema, se puede ver en el Gemfile. Sirve para colorcar breakpoints
+    #byebug
     @page_title = "My Portfolio Blog"
   end
 

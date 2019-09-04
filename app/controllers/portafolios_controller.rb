@@ -1,4 +1,7 @@
 class PortafoliosController < ApplicationController
+  #El método before_action se ejecutará en los métodos edit, update, show y destroy
+  #antes de ejecutar cualquier cosa
+  before_action :set_portfolio_item, only: [:edit, :update; :show, :destroy]
   layout "portafolio"
   
   def index
@@ -30,11 +33,9 @@ class PortafoliosController < ApplicationController
   end
 
   def edit
-    @portfolio_item = Portafolio.find(params[:id])
   end
 
   def update
-    @portfolio_item = Portafolio.find(params[:id])
     respond_to do |format|
       if @portfolio_item.update(portafolio_params)
         format.html { redirect_to portafolios_path, notice: 'The record successfully updated' }
@@ -45,12 +46,11 @@ class PortafoliosController < ApplicationController
   end
 
   def show
-    @portfolio_item = Portafolio.find(params[:id])
+    #La línea de abajo funciona muy parecido como el byebug
+    #binding.pry
   end
 
   def destroy
-    #1. Perform the lookup
-    @portfolio_item = Portafolio.find(params[:id])
 
     #2. Destroy/Delete the record
     @portfolio_item.destroy
@@ -64,5 +64,9 @@ class PortafoliosController < ApplicationController
   private 
   def portafolio_params
     params.require(:portafolio).permit(:title, :subtitle, :body,technologies_attributes: [:name])
+  end
+
+  def set_portfolio_item
+    @portfolio_item = Portafolio.find(params[:id])
   end
 end
