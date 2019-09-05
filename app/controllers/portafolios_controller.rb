@@ -1,7 +1,7 @@
 class PortafoliosController < ApplicationController
   #El método before_action se ejecutará en los métodos edit, update, show y destroy
   #antes de ejecutar cualquier cosa
-  before_action :set_portfolio_item, only: [:edit, :update; :show, :destroy]
+  before_action :set_portfolio_item, only: [:edit, :show, :update, :destroy,]
   layout "portafolio"
   
   def index
