@@ -16,4 +16,9 @@ module ApplicationHelper
             content_tag(:p, greeting, class: "source-greeting")
         end
     end
+
+    #Este método sirve para llamar a la gema que yo creé. 
+    def copyright_generator
+        copyright = TelloViewTool::Renderer.copyright 'Héctor Tello', "Todos los derechos reservados"    
+    end
 end

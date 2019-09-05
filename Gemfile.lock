@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/hectortllo/tello_view_tool
+  revision: 57da553832d91d4425b78e4e713f79f0d07b8354
+  specs:
+    tello_view_tool (0.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -234,6 +240,7 @@ DEPENDENCIES
   sass-rails (~> 5)
   spring
   spring-watcher-listen (~> 2.0.0)
+  tello_view_tool!
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 3.3.0)

@@ -144,3 +144,6 @@ SQL EXAMPLES:
 
 	divide 5,0
 
+28. El video para instalar bootstrap de los tutoriales, no me funcionó, tuve que ver un video en Youtube:
+	https://www.youtube.com/watch?v=bn9arlhfaXc
+
