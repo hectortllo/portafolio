@@ -152,3 +152,5 @@ SQL EXAMPLES:
 	29.2 El código CSS en el archivo con extensión .html.erb
 	29.3 Para poner clases de CSS en código ruby, se hace de la siguiente forma:
 		<%= link_to "Home", root_path, class: 'nav-link' %>
+	29.4 Se podrían crear nuevos archivos en la carpeta shared para el código que se quiera mantener en la mayoría 
+		de la página

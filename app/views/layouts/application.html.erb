@@ -22,14 +22,11 @@
           <%# Importando el archivo _nav.html.erb%>
           <%= render "shared/application_nav"%>
 
-          <%# Importando el método login_helper que está en el archivo application_helper.rb %>
-          <%= login_helper %>
-
           <%# Permite conectar con cualquier otro archivo html%>
           <%= yield %>
 
-          <%# Importando el método copyright_generator que está en el archivo application_helper.rb %>
-          <%= copyright_generator %>
+          <%# Importando el archivo _application_footer.html.erb%>
+          <%= render "shared/application_footer"%>
 
           <%# Llamando el método source_helper que está en el archivo application_helper.rb%>
           <%= source_helper("application") %>
