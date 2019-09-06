@@ -147,3 +147,8 @@ SQL EXAMPLES:
 28. El video para instalar bootstrap de los tutoriales, no me funcionó, tuve que ver un video en Youtube:
 	https://www.youtube.com/watch?v=bn9arlhfaXc
 
+29. Para poner el código HTML y CSS, hacer lo siguiente:
+	29.1 El código CSS se pega en la página app -> javascript -> stylesheets y en el archivo que se quiera.
+	29.2 El código CSS en el archivo con extensión .html.erb
+	29.3 Para poner clases de CSS en código ruby, se hace de la siguiente forma:
+		<%= link_to "Home", root_path, class: 'nav-link' %>

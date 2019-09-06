@@ -15,22 +15,27 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <div class="site-wrapper">
+      <div class="site-wrapper-inner">
+        <div class="cover-container">
 
-    <%# Importando el archivo _nav.html.erb%>
-    <%= render "shared/nav", location: 'top' %>
+          <%# Importando el archivo _nav.html.erb%>
+          <%= render "shared/application_nav"%>
 
-    <%# Importando el método login_helper que está en el archivo application_helper.rb %>
-    <%= login_helper %>
+          <%# Importando el método login_helper que está en el archivo application_helper.rb %>
+          <%= login_helper %>
 
-    <%# Permite conectar con cualquier otro archivo html%>
-    <%= yield %>
+          <%# Permite conectar con cualquier otro archivo html%>
+          <%= yield %>
 
-    <%# Importando el método copyright_generator que está en el archivo application_helper.rb %>
-    <%= copyright_generator %>
+          <%# Importando el método copyright_generator que está en el archivo application_helper.rb %>
+          <%= copyright_generator %>
 
-    <%# Llamando el método source_helper que está en el archivo application_helper.rb%>
-    <%= source_helper("application") %>
+          <%# Llamando el método source_helper que está en el archivo application_helper.rb%>
+          <%= source_helper("application") %>
+
+        </div>
+      </div>
+    </div>
   </body>
 </html>
