@@ -3,7 +3,7 @@
 <%# link_to viene siendo la etiqueta a href de HTML %>
 <%# Línea para mandar a la página new_portaflio_url al dar click
  en Create New Item %>
-<%= link_to "Create New Item", new_portafolio_url %>
+<%= link_to "Create New Item", new_portafolio_url if logged_in?(:site_admin)%>
 
 <%#Haciendo un partial al archivo _portfolio_item.html.erb%>
 <%#Al tener más de una palabra el nombre de la variable, se le debe
