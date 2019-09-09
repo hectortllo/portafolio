@@ -165,4 +165,4 @@ SQL EXAMPLES:
 	@import '~@fortawesome/fontawesome-free/scss/fontawesome';
 	@import '~@fortawesome/fontawesome-free/scss/solid';
 
-31. https://www.iconfinder.com/
+31. Página para sacar imágenes en lugar de font-awesome: https://www.iconfinder.com/

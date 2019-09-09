@@ -1,11 +1,10 @@
-<h1>Portafolio items</h1>
-
-<%# link_to viene siendo la etiqueta a href de HTML %>
-<%# Línea para mandar a la página new_portaflio_url al dar click
- en Create New Item %>
-<%= link_to "Create New Item", new_portafolio_url if logged_in?(:site_admin)%>
-
-<%#Haciendo un partial al archivo _portfolio_item.html.erb%>
-<%#Al tener más de una palabra el nombre de la variable, se le debe
-indicar a ruby específicamente el nombre de la variable %>
-<%= render partial: 'portfolio_item', collection: @portfolio_items%>
+<div class="album text-muted">
+      <div class="container">
+        <div class="row">
+            <%#Haciendo un partial al archivo _portfolio_item.html.erb%>
+            <%#Al tener más de una palabra el nombre de la variable, se le debe
+            indicar a ruby específicamente el nombre de la variable %>
+            <%= render partial: 'portfolio_item', collection: @portfolio_items%>
+        </div>
+    </div>
+</div>
