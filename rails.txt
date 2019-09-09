@@ -154,3 +154,15 @@ SQL EXAMPLES:
 		<%= link_to "Home", root_path, class: 'nav-link' %>
 	29.4 Se podrían crear nuevos archivos en la carpeta shared para el código que se quiera mantener en la mayoría 
 		de la página
+
+30. Para tener font awesome on rails: https://github.com/rails/webpacker/issues/619
+	yarn add @fortawesome/fontawesome-free    
+	yarn add @fortawesome/free-solid-svg-icons
+
+	Add on application.scss
+
+	$fa-font-path: '~@fortawesome/fontawesome-free/webfonts'; 
+	@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+	@import '~@fortawesome/fontawesome-free/scss/solid';
+
+31. https://www.iconfinder.com/

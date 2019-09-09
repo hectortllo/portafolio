@@ -1,4 +1,7 @@
 @import "~bootstrap/scss/bootstrap";
+$fa-font-path: '~@fortawesome/fontawesome-free/webfonts'; 
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/solid';
 /*
  * Globals
  */
@@ -166,3 +169,7 @@
     margin-bottom: 0;
   }
   
+  /* Custom styles*/
+  .social-links li{
+    font-size: 2.5em;
+  }
