@@ -156,7 +156,7 @@ SQL EXAMPLES:
 		de la página
 
 30. Para tener font awesome on rails: https://github.com/rails/webpacker/issues/619
-	yarn add @fortawesome/fontawesome-free    
+	yarn add @fortawesome/fontawesome-free
 	yarn add @fortawesome/free-solid-svg-icons
 
 	Add on application.scss

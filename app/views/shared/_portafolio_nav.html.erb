@@ -1,0 +1,35 @@
+<!-- Start of navigation -->
+<div class="collapse bg-dark" id="navbarHeader">
+    <div class="container">
+    <div class="row">
+        <div class="col-sm-8 py-4">
+        <h4 class="text-white">Sobre mí</h4>
+        <p class="text-muted">En este portafolio te mostraré un poco de todo lo que he hecho a lo largo
+            de mi vida como programador.
+        </p>
+        </div>
+        <div class="col-sm-4 py-4">
+        <h4 class="text-white">Explorar</h4>
+        <ul class="list-unstyled">
+            <li><%= link_to "Home", root_path, class: 'text-white' %></li>
+            <li><%= link_to "About", about_me_path, class: 'text-white' %></li>
+            <li><%= link_to "Contact", contact_path, class: 'text-white' %></li>
+            <li><%= link_to "Blog", blogs_path, class: 'text-white' %></li>
+            <li><%= link_to "Portafolio", portafolios_path, class: 'text-white' %></li>
+            <li><%= login_helper 'text-white' %></li>
+        </ul>
+        </div>
+    </div>
+    </div>
+</div>
+    
+<div class="navbar navbar-dark bg-dark shadow-sm">
+    <div class="container d-flex justify-content-between">
+    <a href="#" class="navbar-brand">Héctor Tello</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    </div>
+</div>
+<!-- End of navigation -->
+
