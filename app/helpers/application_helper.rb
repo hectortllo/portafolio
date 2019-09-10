@@ -21,4 +21,44 @@ module ApplicationHelper
     def copyright_generator
         copyright = TelloViewTool::Renderer.copyright 'Héctor Tello', "Todos los derechos reservados"    
     end
+
+    def nav_items 
+        [
+            {
+                url: root_path,
+                title: 'Home'
+            },
+            {
+                url: about_me_path,
+                title: 'About me'
+            },
+            {
+                url: contact_path,
+                title: 'Contacto'
+            },
+            {
+                url: blogs_path,
+                title: 'Blog'
+            },
+            {
+                url: portafolios_path,
+                title: 'Portafolios'
+            },
+        ]
+    end
+
+    #Método para poner los menús en las páginas principales
+    def nav_helper style, tag_type
+        nav_links = ''
+        nav_items.each do |item|
+           nav_links << "<#{tag_type}><a href='#{item[:url]}' class='#{style} #{active? item[:url]}'>#{item[:title]}</a>
+           </#{tag_type}>" 
+        end
+        nav_links.html_safe
+    end
+
+    def active? path
+        "active" if current_page? path
+    end
+
 end
