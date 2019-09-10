@@ -17,7 +17,7 @@
   <body>
     <%= render 'shared/portafolio_nav'%>
 
-    <%= render 'shared/portafolio_masthead'%>
+    <%= render 'shared/portafolio_masthead' unless logged_in?(:site_admin) %>
 
     <%# Permite conectar con cualquier otro archivo html%>
     <%= yield %>
