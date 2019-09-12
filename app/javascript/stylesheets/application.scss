@@ -29,7 +29,7 @@ a:hover {
 html,
 body {
   height: 100%;
-  background-color: #333;
+  //background-color: #333;
 }
 body {
   color: #fff;
@@ -191,5 +191,19 @@ text-align: right;
 
 .app-nav span{
   margin-right: 25px;
-  
+}
+
+//En caso de que quiera agregar un video de background a la página
+#background{
+  position: fixed;
+  top: 0;
+  left: 0%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  transform: translateX(-50) translateY(-50);
+  background: image('fondo.png');
+  background-size: cover;
 }

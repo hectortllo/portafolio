@@ -166,3 +166,4 @@ SQL EXAMPLES:
 	@import '~@fortawesome/fontawesome-free/scss/solid';
 
 31. Página para sacar imágenes en lugar de font-awesome: https://www.iconfinder.com/
+32. Para installar jquery: https://www.botreetechnologies.com/blog/introducing-jquery-in-rails-6-using-webpacker

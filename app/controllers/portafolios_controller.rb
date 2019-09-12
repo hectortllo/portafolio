@@ -6,7 +6,7 @@ class PortafoliosController < ApplicationController
   access all: [:show, :index, :angular], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
   
   def index
-    @portfolio_items = Portafolio.all
+    @portfolio_items = Portafolio.by_position
   end
 
   def angular
@@ -64,7 +64,12 @@ class PortafoliosController < ApplicationController
 
   private 
   def portafolio_params
-    params.require(:portafolio).permit(:title, :subtitle, :body,technologies_attributes: [:name])
+    params.require(:portafolio).permit(:title, 
+                                      :subtitle, 
+                                      :body,
+                                      :main_image,
+                                      :thumb_image,
+                                      technologies_attributes: [:name])
   end
 
   def set_portfolio_item
